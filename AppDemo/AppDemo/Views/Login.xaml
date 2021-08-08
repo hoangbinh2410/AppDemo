@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppDemo"
+             x:Class="AppDemo.Views.Login">
+    <StackLayout Padding="0">
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="Aqua" HeightRequest="110" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Image Source="{local:Resource AppDemo.img.home.png }" />
+                        <Label HorizontalOptions="Center"  Text="Phần mềm quản lý công nhân"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="15,140,15,0">
+                <Frame BackgroundColor="White" HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand" >
+                    <StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="SIGN IN" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Margin="0,25,0,0">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="30" WidthRequest="30" Padding="0" Margin="10">
+                                        <Image Source="{local:Resource AppDemo.img.home.png }"/>
+                                    </Frame>
+                                    <local:CustomEntry Placeholder="User name" TextColor="DarkBlue" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,20,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="30" WidthRequest="30" Padding="0" Margin="10">
+                                        <Image Source="{local:Resource AppDemo.img.home.png }" Aspect="AspectFit" />
+                                    </Frame>
+                                    <local:CustomEntry Placeholder="Password"  IsPassword="True" TextColor="DarkBlue" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <CheckBox IsChecked="False" Color="DarkBlue"/>
+                            <Label Text="Hiển thị mật khẩu" TextColor="DarkBlue" VerticalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" >
+                            <CheckBox IsChecked="False" Color="DarkBlue"/>
+                            <Label Text="Lưu tài khoản" TextColor="DarkBlue" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+                            <Picker x:Name="itemPicker"
+                                    FontSize="14"
+                                    TextColor="DarkBlue"
+                                Title="Ngôn ngữ" HorizontalTextAlignment="End"  HorizontalOptions="EndAndExpand" >
+                                <Picker.Items>
+                                    <x:String>Tiếng Việt</x:String>
+                                    <x:String>Tiếng Anh</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <Button Text="SIGN IN" BackgroundColor="DarkBlue" TextColor="White" Margin="15,100,15,0" CornerRadius="50" Clicked="Button_Clicked" ></Button>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

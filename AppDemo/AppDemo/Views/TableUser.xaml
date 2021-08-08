@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:AppDemo.Models"
+             xmlns:local="clr-namespace:AppDemo"
+             x:Class="AppDemo.Views.TableUser"
+             Title="Danh sách nhân viên">
+    <ContentPage.BindingContext>
+        <local1:UserInfo/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Frame HeightRequest="30" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand">
+            <FlexLayout JustifyContent="SpaceBetween" AlignItems="Center" Direction="Row">
+                <Image Source="{local:Resource AppDemo.img.home.png }"/>
+                <Label  Text="Danh sách Nhân Viên" HorizontalTextAlignment="Center" TextColor="Black" FontSize="26" ></Label>
+                <Image Source="{local:Resource AppDemo.img.home.png }"/>
+            </FlexLayout>
+        </Frame>
+        <FlexLayout JustifyContent="Center" Direction="Row" AlignItems="Center">
+            <Label Text="Tìm kiếm theo:" HorizontalOptions="Center" TextColor="DarkBlue" ></Label>
+            <Picker x:Name="itemPicker "
+                                    FontSize="14"
+                                    TextColor="DarkBlue"
+                                Title="Tất cả" >
+                <Picker.Items>
+                    <x:String>Tất cả</x:String>
+                    <x:String>Tên</x:String>
+                </Picker.Items>
+            </Picker>
+        </FlexLayout>
+        <Frame>
+            <ListView x:Name="ListDemo">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="80" AlignItems="Center" >
+
+                                <Image Source ="{local:Resource AppDemo.img.home.png}" HeightRequest="70" WidthRequest="80" BackgroundColor="Transparent" />
+                                <FlexLayout FlexLayout.Grow="1" Direction="Column" >
+                                    <Label Text="{Binding Ten}"/>
+                                    <Label Text="{Binding Manv}"/>
+                                    <Label Text="{Binding Diachi}"/>
+                                    <Label Text="{Binding Ngaysinh}"/>
+                                    <Label Text="{Binding Gioitinh}"/>
+                                </FlexLayout>
+                            </FlexLayout>
+
+                        </ViewCell>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+    </StackLayout>
+</ContentPage>
