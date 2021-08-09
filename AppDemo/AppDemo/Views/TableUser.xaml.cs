@@ -20,7 +20,10 @@ namespace AppDemo.Views
             InitializeComponent();
             ListUser();
         }
+<<<<<<< HEAD
         // Get List User
+=======
+>>>>>>> b6a33113512e3f30ab70cfc710fe17ef4ffdf454
         public async void ListUser()
         {
 
