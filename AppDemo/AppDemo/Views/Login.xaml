@@ -6,14 +6,14 @@
     <StackLayout Padding="0">
         <Grid>
             <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="Aqua" HeightRequest="110" HorizontalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Image Source="{local:Resource AppDemo.img.home.png }" />
+                <Frame BackgroundColor="Aqua" HeightRequest="120" HorizontalOptions="FillAndExpand">
+                    <FlexLayout JustifyContent="Center" Direction="Column" AlignItems="Center" >
+                        <Image Source="https://yt3.ggpht.com/ytc/AKedOLRwYKFsL27ONe0RdOsQL65PqVG0GMKP_eCq5fqS=s900-c-k-c0x00ffffff-no-rj"></Image>
                         <Label HorizontalOptions="Center"  Text="Phần mềm quản lý công nhân"/>
-                    </StackLayout>
+                    </FlexLayout>
                 </Frame>
             </StackLayout>
-            <StackLayout Margin="15,140,15,0">
+            <StackLayout Margin="15,150,15,0">
                 <Frame BackgroundColor="White" HasShadow="True" HeightRequest="500" HorizontalOptions="FillAndExpand" >
                     <StackLayout>
                         <StackLayout HorizontalOptions="CenterAndExpand">
@@ -25,7 +25,7 @@
                                     <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="30" WidthRequest="30" Padding="0" Margin="10">
                                         <Image Source="{local:Resource AppDemo.img.home.png }"/>
                                     </Frame>
-                                    <local:CustomEntry Placeholder="User name" TextColor="DarkBlue" HorizontalOptions="FillAndExpand"/>
+                                    <local:CustomEntry x:Name="Name" Placeholder="User name" TextColor="DarkBlue" HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>
                             </Frame>
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,20,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">

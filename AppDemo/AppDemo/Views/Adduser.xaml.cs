@@ -1,4 +1,5 @@
 ﻿using AppDemo.Models;
+using AppDemo.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,79 +16,50 @@ namespace AppDemo.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Adduser : ContentPage
     {
+        public DateTime enteredDate;
         public Adduser()
         {
             InitializeComponent();
             
-       }
-        public Command SaveUser
+        }
+
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
-            get
-            {
-                return new Command(async () =>
-                {
-                    UserInfo userInfo = new UserInfo();
-                    userInfo.Ten = Ten;
-                    userInfo.Manv = Manv;
-                    userInfo.Diachi = Diachi;
-                    string url = "http://192.168.0.102:5000/api/Home";
-                    HttpClient client = new HttpClient();
-                    string jsonData = JsonConvert.SerializeObject(userInfo);
-                    StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await client.PostAsync(url, content);
-                    
-                });
-            }
+            var date = e.NewDate.ToString();
+            enteredDate = DateTime.Parse(date);
+
+            //return enteredDate;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+            SaveUser();
 
         }
-        string _ten;
-        public string Ten
+        public async void SaveUser()
         {
-            get
-            {
-                return _ten;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    _ten = value;
-                    OnPropertyChanged();
-                }
-            }
+            
+            var _user = new UserInfo();
+
+            _user.Ten = Ten.Text;
+            _user.Manv = Manv.Text;
+            _user.Diachi = Diachi.Text;
+            _user.Ngaysinh = enteredDate;
+            _user.Gioitinh = itemPicker.ItemsSource.ToString();
+
+            string url = "http://192.168.108.2:8080/api/Home";
+            HttpClient client = new HttpClient();
+            string jsonData = JsonConvert.SerializeObject(_user);
+            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync(url, content);
+            string result = await response.Content.ReadAsStringAsync();
         }
-        string _manv;
-        public string Manv
-        {
-            get
-            {
-                return _manv;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    _manv = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        string _diachi;
-        public string Diachi
-        {
-            get
-            {
-                return _diachi;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    _diachi = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        
+
+        //private DateTime DatePicker_DateSelected()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

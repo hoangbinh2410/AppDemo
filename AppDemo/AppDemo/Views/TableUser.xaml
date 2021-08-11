@@ -29,19 +29,20 @@
             </Picker>
         </FlexLayout>
         <Frame>
-            <ListView x:Name="ListDemo">
+            <ListView x:Name="ListDemo" RowHeight="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="80" AlignItems="Center" >
-
-                                <Image Source ="{local:Resource AppDemo.img.home.png}" HeightRequest="70" WidthRequest="80" BackgroundColor="Transparent" />
-                                <FlexLayout FlexLayout.Grow="1" Direction="Column" >
+                            <FlexLayout Direction="Row" JustifyContent="Center" BackgroundColor="White" HeightRequest="300" AlignItems="Center">
+                                <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="60" WidthRequest="60" Padding="0" Margin="10">
+                                    <Image Source ="{local:Resource AppDemo.img.home.png}" BackgroundColor="Transparent" />
+                                </Frame>
+                                <FlexLayout FlexLayout.Grow="1" Direction="Column" AlignItems="Start" JustifyContent="Center">
                                     <Label Text="{Binding Ten}"/>
                                     <Label Text="{Binding Manv}"/>
                                     <Label Text="{Binding Diachi}"/>
-                                    <Label Text="{Binding Ngaysinh}"/>
-                                    <Label Text="{Binding Gioitinh}"/>
+                                    <!--<Label Text="{Binding Ngaysinh}"/>
+                                    <Label Text="{Binding Gioitinh}"/>-->
                                 </FlexLayout>
                             </FlexLayout>
 

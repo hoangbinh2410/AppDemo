@@ -20,17 +20,14 @@ namespace AppDemo.Views
             InitializeComponent();
             ListUser();
         }
-<<<<<<< HEAD
-        // Get List User
-=======
->>>>>>> b6a33113512e3f30ab70cfc710fe17ef4ffdf454
+
         public async void ListUser()
         {
 
-            var uri = "http://192.168.0.102:5000/api/Home";
+            var uri = "http://192.168.108.2:8080/api/Home";
             var client = new HttpClient();
             var response = await client.GetStringAsync(uri);
-
+            
             var list = JsonConvert.DeserializeObject<List<UserInfo>>(response);
             ListDemo.ItemsSource = list;
 

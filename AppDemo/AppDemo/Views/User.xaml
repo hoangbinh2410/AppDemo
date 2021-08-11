@@ -25,10 +25,10 @@
                     </Image>
                 </FlexLayout>
             </Frame>
-            <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="80" AlignItems="Center" >
+            <FlexLayout Direction="Row" JustifyContent="Center" BackgroundColor="White" HeightRequest="80" AlignItems="Start" >
 
                 <Image Source ="{local:Resource AppDemo.img.home.png}" HeightRequest="70" WidthRequest="80" BackgroundColor="Transparent" />
-                <FlexLayout FlexLayout.Grow="1" Direction="Column" >
+                <FlexLayout FlexLayout.Grow="1" Direction="Column" JustifyContent="Center" AlignItems="Start" >
                     <Label Text="AVC" FontSize="24" />
                     <Label Text="21321" FontSize="18" />
                 </FlexLayout>

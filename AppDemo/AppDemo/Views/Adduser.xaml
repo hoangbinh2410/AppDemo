@@ -2,54 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Thêm nhân viên"
-             xmlns:local1="clr-namespace:AppDemo.Views"
              xmlns:local="clr-namespace:AppDemo"
              x:Class="AppDemo.Views.Adduser">
-    <ContentPage.BindingContext>
-        <local1:Adduser/>
-    </ContentPage.BindingContext>
 
     <StackLayout>
         <Frame HeightRequest="30" BackgroundColor="Aqua" HorizontalOptions="FillAndExpand">
             <FlexLayout AlignItems="Center" Direction="Row" JustifyContent="SpaceBetween">
-                <Image Source='{local:Resource AppDemo.img.home.png }'/>
+                <Image Source='https://image.flaticon.com/icons/png/512/109/109618.png'/>
                 <Label  Text="Thêm Nhân Viên" HorizontalTextAlignment="Center" TextColor="Black" FontSize="28" />
                 <Label></Label>
             </FlexLayout>
         </Frame>
         <StackLayout Margin="10,25,10,0">
             <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="50" AlignItems="Center">
-                <Image Source="{local:Resource AppDemo.img.home.png }"/>
-                <local:CustomEntry Text="{Binding Ten}" Placeholder="Tên nhân viên " TextColor="DarkBlue"  FlexLayout.Grow="1"/>
+                <Image Source="https://img.icons8.com/metro/26/000000/name.png"/>
+                <local:CustomEntry x:Name="Ten"  Placeholder="Tên nhân viên " TextColor="DarkBlue"  FlexLayout.Grow="1"/>
             </FlexLayout>
             <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="50" AlignItems="Center">
-                <Image Source="{local:Resource AppDemo.img.home.png }"/>
-                <local:CustomEntry Text="{Binding Diachi}" Placeholder="Địa chỉ"   TextColor="DarkBlue" FlexLayout.Grow="1"/>
+                <Image Source="{local:Resource Demo.img.home.png }"/>
+                <local:CustomEntry   x:Name="Diachi" Placeholder="Địa chỉ"   TextColor="DarkBlue" FlexLayout.Grow="1"/>
             </FlexLayout>
             <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="50" AlignItems="Center" >
-                <Image Source="{local:Resource AppDemo.img.home.png }"/>
-                <local:CustomEntry Text="{Binding Manv}" Placeholder="Số điện thoại" TextColor="DarkBlue" FlexLayout.Grow="1"/>
+                <Image Source="https://fonts.google.com/icons?selected=Material%20Icons%20Sharp%3Averified%3A"/>
+                <local:CustomEntry x:Name="Manv" Placeholder="Mã nhân viên" TextColor="DarkBlue" FlexLayout.Grow="1"/>
             </FlexLayout>
             <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="50" AlignItems="Center" >
-                <Image Source="{local:Resource AppDemo.img.home.png }"/>
+                <Image Source="https://image.flaticon.com/icons/png/512/2118/2118701.png"/>
                 <Picker x:Name="itemPicker"
                                     FontSize="14"
                                     TextColor="DarkBlue"
-                                Title="Giới tính"  FlexLayout.Grow="1">
+                                Title="Giới tính"  FlexLayout.Grow="1" >
                     <Picker.Items>
                         <x:String>Nam</x:String>
                         <x:String>Nữ</x:String>
-                        
                     </Picker.Items>
                 </Picker>
             </FlexLayout>
 
             <FlexLayout Direction="Row" JustifyContent="Start" BackgroundColor="White" HeightRequest="50" AlignItems="Center">
-                <Image Source="{local:Resource AppDemo.img.home.png }"/>
-                <DatePicker>
+                <Image Source="https://img.icons8.com/ios/50/000000/pay-date.png"/>
+                <DatePicker DateSelected="DatePicker_DateSelected">
                 </DatePicker>
             </FlexLayout>
-            <Button Text="SAVE" Command="{Binding SaveUser}" BackgroundColor="DarkBlue" TextColor="White" Margin="15,100,15,0" CornerRadius="50"></Button>
+            <FlexLayout AlignItems="Center">
+                <Button Text="SAVE" Clicked="Button_Clicked" BackgroundColor="DarkBlue" TextColor="White" Margin="15,100,15,0" CornerRadius="50" ></Button>
+            </FlexLayout>
+            
         </StackLayout>
     </StackLayout>
 </ContentPage>
